@@ -1,0 +1,133 @@
+# : << EOF
+# https://github.com/gpakosz/.tmux
+
+# -- display -------------------------------------------------------------------
+nord_polar_night_0="#2e3440"
+nord_polar_night_1="#3b4252"
+nord_polar_night_2="#434c5e"
+nord_polar_night_3="#4c566a"
+nord_snow_storm_0="#d8dee9"
+nord_snow_storm_1="#e5e9f0"
+nord_snow_storm_2="#eceff4"
+nord_frost_0="#8fbcbb"
+nord_frost_1="#88c0d0"
+nord_frost_2="#81a1c1"
+nord_frost_3="#5e81ac"
+nord_aurora_0="#ce5a68"
+nord_aurora_1="#d08770"
+nord_aurora_2="#ebcb8b"
+nord_aurora_3="#a3be8c"
+nord_aurora_4="#b48ead"
+
+# pane borders style (<prefix> + h,j,k,l)
+tmux_conf_theme_pane_border="$nord_polar_night_3"
+tmux_conf_theme_pane_active_border="$nord_frost_1"
+# pane indicator style (<prefix> + q)
+tmux_conf_theme_pane_indicator="$nord_frost_1"
+tmux_conf_theme_pane_active_indicator="$nord_frost_1"
+# modes style (<prefix> + s,w)
+tmux_conf_theme_mode_fg="$nord_polar_night_0"
+tmux_conf_theme_mode_bg="$nord_frost_1"
+# clock style (<prefix> + t)
+tmux_conf_theme_clock_colour="$nord_frost_1"
+
+# window current status style
+tmux_conf_theme_window_status_current_fg="$nord_polar_night_0"
+tmux_conf_theme_window_status_current_bg="$nord_frost_1"
+# window last status style
+tmux_conf_theme_window_status_last_fg="$nord_frost_1"
+tmux_conf_theme_window_status_last_bg="$nord_polar_night_0"
+# window status style
+tmux_conf_theme_window_status_fg="$nord_polar_night_4"
+tmux_conf_theme_window_status_bg="$nord_polar_night_0"
+# window bell status style (sleep 5 && echo -e "\07")
+tmux_conf_theme_window_status_bell_fg="$nord_aurora_0"
+
+# status left style
+tmux_conf_theme_status_left=" ❐ #S "
+tmux_conf_theme_status_left_fg="$nord_polar_night_0"
+tmux_conf_theme_status_left_bg="$nord_aurora_2"
+# status right style
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} | %a %b %d %R | #{username}#{root}@#{hostname} "
+tmux_conf_theme_status_right_fg="$nord_polar_night_0,$nord_aurora_3,$nord_aurora_2"
+tmux_conf_theme_status_right_bg="$nord_aurora_3,$nord_polar_night_1,$nord_polar_night_3"
+tmux_conf_theme_status_right_attr="none,none,none"
+
+# status line style (<prefix> + r,:)
+tmux_conf_theme_message_fg="$nord_polar_night_0"
+tmux_conf_theme_message_bg="$nord_aurora_2"
+# status line command style (<prefix> + : + ESC)
+tmux_conf_theme_message_command_fg="$nord_snow_storm_0"
+tmux_conf_theme_message_command_bg="$nord_polar_night_0"
+# status line style
+tmux_conf_theme_status_bg="$nord_polar_night_3"
+
+# terminal title
+tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
+
+# status left/right sections separators
+tmux_conf_theme_left_separator_main="\uE0B0"
+tmux_conf_theme_left_separator_sub="\uE0B1"
+tmux_conf_theme_right_separator_main="\uE0B2"
+tmux_conf_theme_right_separator_sub="\uE0B3"
+
+# pairing indicator
+tmux_conf_theme_pairing="⚇"            # U+2687
+tmux_conf_theme_pairing_attr="bold"
+# prefix indicator
+tmux_conf_theme_prefix="⌨"             # U+2328
+tmux_conf_theme_prefix_attr="bold"
+# mouse indicator
+tmux_conf_theme_mouse="↗"              # U+2197
+tmux_conf_theme_mouse_attr="bold"
+# root indicator
+tmux_conf_theme_root="!"
+tmux_conf_theme_root_attr="bold,blink"
+# synchronized indicator
+tmux_conf_theme_synchronized="⚏"       # U+268F
+
+# -- clipboard -----------------------------------------------------------------
+# on macOS, this requires installing reattach-to-user-namespace, see README.md
+# on Linux, this requires xsel or xclip
+tmux_conf_copy_to_os_clipboard=false
+
+# -- user customizations -------------------------------------------------------
+# this is the place to override or undo settings
+
+# force Vi mode
+#   really you should export VISUAL or EDITOR environment variable, see manual
+# set -g status-keys vi
+set -g mode-keys vi
+
+# replace C-b by C-a instead of using both prefixes
+set -gu prefix2
+unbind C-a
+# unbind C-b
+# set -g prefix C-a
+# bind C-a send-prefix
+
+# -- tpm -----------------------------------------------------------------------
+# /!\ the tpm bindings differ slightly from upstream:
+#   - installing plugins: <prefix> + I
+#   - uninstalling plugins: <prefix> + Alt + u
+#   - updating plugins: <prefix> + u
+
+# /!\ do not add set -g @plugin 'tmux-plugins/tpm'
+# /!\ do not add run '~/.tmux/plugins/tpm/tpm'
+
+# to enable a plugin, use the 'set -g @plugin' syntax:
+# visit https://github.com/tmux-plugins for available plugins
+# set -g @plugin 'tmux-plugins/tmux-copycat'
+# set -g @plugin 'tmux-plugins/tmux-cpu'
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @plugin 'tmux-plugins/tmux-continuum'
+# set -g @continuum-restore 'on'
+
+# -- custom variables ----------------------------------------------------------
+# EOF
+#
+# online() {
+#   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
+# }
+#
+# "$@"
