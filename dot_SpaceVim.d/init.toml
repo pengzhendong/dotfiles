@@ -8,7 +8,7 @@
 
 # All SpaceVim option below [option] section
 [options]
-    # set spacevim theme. by default colorscheme layer is not loaded,
+    # Set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
     colorscheme = "gruvbox"
@@ -23,12 +23,11 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
-    filetree_direction = "left"
 
-[[layers]]
-name = "colorscheme"
-random_theme = true
-frequency = "hourly"
+    # Custom config
+    bootstrap_before = "myspacevim#before"
+    bootstrap_after  = "myspacevim#after"
+    filetree_direction = "left"
 
 # Enable autocomplete layer
 [[layers]]
@@ -40,3 +39,7 @@ auto_completion_tab_key_behavior = "smart"
 name = "shell"
 default_position = "bottom"
 default_height = 30
+
+[[custom_plugins]]
+repo = "takac/vim-hardtime"
+merged = false
