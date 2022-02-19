@@ -144,7 +144,3 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Autojump
 [ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
-# Jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
