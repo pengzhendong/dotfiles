@@ -1,0 +1,9 @@
+# Anaconda
+export PATH=/usr/local/anaconda3/bin:$PATH
+
+# Android
+export ANDROID_SDK_ROOT=$HOME/Library/Android
+
+# Jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

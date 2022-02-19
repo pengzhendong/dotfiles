@@ -15,6 +15,7 @@ README.md
 .hammerspoon
 .lrzsz
 .Brewfile
+.zprofile
 {{ end }}
 
 # Ignore non-Linux files.
