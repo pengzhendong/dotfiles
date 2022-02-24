@@ -105,7 +105,7 @@ export LC_ALL=en_US.UTF-8
 # For a full list of active aliases, run `alias`.
 alias proxy_socks5="export ALL_PROXY=socks5h://127.0.0.1:1089"
 alias proxy_http="export ALL_PROXY=http://127.0.0.1:8889"
-alias unsett_proxy="unset ALL_PROXY"
+alias unset_proxy="unset ALL_PROXY"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -136,7 +136,9 @@ zinit for \
 zinit ice lucid wait='0'
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
+zinit light jeffreytse/zsh-vi-mode
 ### End of Zinit's installer chunk
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
