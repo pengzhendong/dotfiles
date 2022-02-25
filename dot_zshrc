@@ -105,6 +105,8 @@ export LC_ALL=en_US.UTF-8
 # For a full list of active aliases, run `alias`.
 alias proxy_socks5="export ALL_PROXY=socks5h://127.0.0.1:1089"
 alias proxy_http="export ALL_PROXY=http://127.0.0.1:8889"
+alias proxy_client_socks5="export ALL_PROXY=socks5h://${SSH_CLIENT%% *}:1089"
+alias proxy_client_http="export ALL_PROXY=http://${SSH_CLIENT%% *}:8889"
 alias unset_proxy="unset ALL_PROXY"
 
 ### Added by Zinit's installer
@@ -162,4 +164,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-conda activate py38
+conda activate py38 &> /dev/null
