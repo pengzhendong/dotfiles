@@ -141,6 +141,8 @@ zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 zinit light jeffreytse/zsh-vi-mode
+# Refer to https://github.com/jeffreytse/zsh-vi-mode/issues/165
+zvm_after_init_commands+=("bindkey '^[[A' up-line-or-search" "bindkey '^[[B' down-line-or-search")
 ### End of Zinit's installer chunk
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
