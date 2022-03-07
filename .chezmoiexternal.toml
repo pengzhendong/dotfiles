@@ -1,0 +1,23 @@
+[".oh-my-zsh"]
+  type = "git-repo"
+  url = "https://github.com/ohmyzsh/ohmyzsh.git"
+  [".oh-my-zsh".pull]
+    args = ["--ff-only"]
+
+[".oh-my-zsh/custom/themes/powerlevel10k"]
+  type = "git-repo"
+  url = "https://github.com/romkatv/powerlevel10k.git"
+  [".oh-my-zsh/custom/themes/powerlevel10k".pull]
+    args = ["--ff-only"]
+
+[".zinit"]
+  type = "git-repo"
+  url = "https://github.com/zdharma-continuum/zinit.git"
+  [".zinit".pull]
+    args = ["--ff-only"]
+
+[".tmux"]
+  type = "git-repo"
+  url = "https://github.com/gpakosz/.tmux.git"
+  [".tmux".pull]
+    args = ["--ff-only"]

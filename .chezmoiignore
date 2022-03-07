@@ -12,7 +12,7 @@ README.md
 
 # Ignore non-MacOS files.
 {{ if ne .chezmoi.os "darwin" }}
-.brewfile/mac
+.brewfile/darwin
 .hammerspoon
 .lrzsz
 .zprofile
