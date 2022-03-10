@@ -1,7 +1,0 @@
-# Homebrew for Linux
-eval "$($HOME/homebrew/bin/brew shellenv)"
-
-# Miniconda
-export PATH=$HOME/miniconda3/bin:$PATH
-
-exec zsh -o NO_GLOBAL_RCS

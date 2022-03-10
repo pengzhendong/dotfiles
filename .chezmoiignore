@@ -12,19 +12,7 @@ README.md
 
 # Ignore non-MacOS files.
 {{ if ne .chezmoi.os "darwin" }}
-.brewfile/darwin
 .hammerspoon
 .lrzsz
-.zprofile
 {{ end }}
 
-# Ignore non-Linux files.
-{{ if ne .chezmoi.os "linux" }}
-.bash_profile
-.brewfile/linux
-{{ end }}
-
-# Ignore non-Windows file.
-{{ if ne .chezmoi.os "windows" }}
-.config/windows_terminal
-{{ end }}

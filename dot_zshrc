@@ -103,53 +103,48 @@ export LC_ALL=en_US.UTF-8
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias proxy_socks5="export ALL_PROXY=socks5h://127.0.0.1:1089"
-alias proxy_http="export ALL_PROXY=http://127.0.0.1:8889"
-alias proxy_client_socks5="export ALL_PROXY=socks5h://${SSH_CLIENT%% *}:1089"
-alias proxy_client_http="export ALL_PROXY=http://${SSH_CLIENT%% *}:8889"
-alias unset_proxy="unset ALL_PROXY"
+alias proxy="export ALL_PROXY=socks5://127.0.0.1:7890"
+alias client_proxy="export ALL_PROXY=socks5://${SSH_CLIENT%% *}:7890"
+alias unproxy="unset ALL_PROXY"
 
 ### Added by Zinit's installer
-source "$HOME/.zinit/zinit.zsh"
+source $HOME/.zinit/zinit.zsh
 
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
-zinit light-mode for \
-  zdharma-continuum/zinit-annex-readurl \
+zinit for \
+  OMZ::plugins/autojump/autojump.plugin.zsh \
+  OMZ::plugins/git/git.plugin.zsh \
+  OMZ::plugins/vi-mode/vi-mode.plugin.zsh \
+  zdharma-continuum/zinit-annex-as-monitor \
   zdharma-continuum/zinit-annex-bin-gem-node \
   zdharma-continuum/zinit-annex-patch-dl \
   zdharma-continuum/zinit-annex-rust
 
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit light-mode $([ -n "$wait" ] && echo "wait") lucid for \
+  zdharma-continuum/history-search-multi-word \
+  atinit='zpcompinit' zdharma-continuum/fast-syntax-highlighting \
+  atload'_zsh_autosuggest_start' zsh-users/zsh-autosuggestions \
+  Aloxaf/fzf-tab \
+  chrissicool/zsh-256color \
+  djui/alias-tips \
+  wfxr/forgit
 
-zinit for \
-  OMZ::plugins/autojump/autojump.plugin.zsh \
-  OMZ::plugins/git/git.plugin.zsh \
-  OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 VI_MODE_SET_CURSOR=true
 
-zinit light-mode wait lucid for \
-  zdharma-continuum/fast-syntax-highlighting \
-  zdharma-continuum/history-search-multi-word \
-  atload'_zsh_autosuggest_start' zsh-users/zsh-autosuggestions
+bindkey "^F" forward-word
+bindkey "^[[Z" menu-complete
 ### End of Zinit's installer chunk
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$(conda info --base)/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-  eval "$__conda_setup"
-else
-  if [ -f "$(conda info --base)/etc/profile.d/conda.sh" ]; then
-    . "$(conda info --base)/etc/profile.d/conda.sh"
-  else
-    export PATH="$(conda info --base)/bin:$PATH"
-  fi
+# Miniforge
+conda_prefix=/opt/homebrew/Caskroom/miniforge/base
+if [[ $(uname) == 'Linux' ]]; then
+  conda_prefix=$HOME/miniforge3
 fi
-unset __conda_setup
-# <<< conda initialize <<<
+source $conda_prefix/etc/profile.d/conda.sh
 
-conda activate py38 &> /dev/null
+export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$PATH
