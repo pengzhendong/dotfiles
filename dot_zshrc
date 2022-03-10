@@ -122,16 +122,19 @@ zinit light-mode for \
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-zinit for \
-  OMZ::plugins/autojump/autojump.plugin.zsh \
-  OMZ::plugins/git/git.plugin.zsh \
-  OMZ::plugins/vi-mode/vi-mode.plugin.zsh
-VI_MODE_SET_CURSOR=true
-
 zinit light-mode wait lucid for \
   zdharma-continuum/fast-syntax-highlighting \
   zdharma-continuum/history-search-multi-word \
   atload'_zsh_autosuggest_start' zsh-users/zsh-autosuggestions
+
+zinit for \
+  OMZ::plugins/autojump/autojump.plugin.zsh \
+  OMZ::plugins/git/git.plugin.zsh \
+  OMZ::plugins/vi-mode/vi-mode.plugin.zsh
+
+VI_MODE_SET_CURSOR=true
+
+bindkey "^F" forward-word
 ### End of Zinit's installer chunk
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
