@@ -31,7 +31,7 @@
   untrackedCache = true
 
   # Ensure line endings in files checkout are correct for Windows. 
-  autocrlf = true
+  # autocrlf = true
 
 [diff]
   # Detect copies as well as renames.
@@ -54,3 +54,11 @@
   default = simple
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
+
+[safe]
+  directory = /opt/homebrew/Library/Taps/homebrew/homebrew-cask
+  directory = /opt/homebrew/Library/Taps/homebrew/homebrew-core
+  directory = /opt/homebrew/Library/Taps/homebrew/homebrew-services
+  directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask
+  directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core
+  directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-service

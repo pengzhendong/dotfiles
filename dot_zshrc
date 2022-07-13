@@ -155,4 +155,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-conda activate py38 &> /dev/null
+conda activate py39 &> /dev/null
