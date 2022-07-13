@@ -31,7 +31,7 @@
   untrackedCache = true
 
   # Ensure line endings in files checkout are correct for Windows. 
-  autocrlf = true
+  # autocrlf = true
 
 [diff]
   # Detect copies as well as renames.
