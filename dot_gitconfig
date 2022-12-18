@@ -6,6 +6,8 @@
   defaultBranch = master
 
 [apply]
+  editor = vim
+
   # Detect whitespace errors when applying a patch.
   whitespace = fix
 
