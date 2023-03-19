@@ -63,4 +63,4 @@
   directory = /opt/homebrew/Library/Taps/homebrew/homebrew-services
   directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask
   directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core
-  directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-service
+  directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-services

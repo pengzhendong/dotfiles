@@ -1,11 +1,9 @@
-# HomeBrew
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/ #ckbrew
-eval $(/opt/homebrew/bin/brew shellenv) #ckbrew
+brew_prefix=/usr/local/Homebrew
+if [[ $(uname -m) == 'arm64' ]]; then
+  brew_prefix=/opt/homebrew
+fi
 
-# Anaconda
-export PATH=/opt/homebrew/anaconda3/bin:$PATH
-export PATH=/usr/local/anaconda3/bin:$PATH
-
-# Jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# Homebrew
+export HOMEBREW_API_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api
+export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+eval $($brew_prefix/bin/brew shellenv)

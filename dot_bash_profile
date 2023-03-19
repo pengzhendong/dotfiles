@@ -1,10 +1,6 @@
-# Homebrew for Linux
-eval "$($HOME/homebrew/bin/brew shellenv)"
-export HOMEBREW_NO_AUTO_UPDATE=true
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-
-# Miniconda
-export PATH=$HOME/miniconda3/bin:$PATH
+# Homebrew 
+export HOMEBREW_API_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api
+export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 exec zsh -o NO_GLOBAL_RCS

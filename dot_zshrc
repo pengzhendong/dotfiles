@@ -110,7 +110,7 @@ alias proxy_client_http="export ALL_PROXY=http://${SSH_CLIENT%% *}:8889"
 alias unset_proxy="unset ALL_PROXY"
 
 ### Added by Zinit's installer
-source "$HOME/.zinit/zinit.zsh"
+source $HOME/.zinit/zinit.zsh
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
@@ -140,19 +140,15 @@ bindkey "^F" forward-word
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$(conda info --base)/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-  eval "$__conda_setup"
-else
-  if [ -f "$(conda info --base)/etc/profile.d/conda.sh" ]; then
-    . "$(conda info --base)/etc/profile.d/conda.sh"
-  else
-    export PATH="$(conda info --base)/bin:$PATH"
-  fi
+# Anaconda3
+conda_prefix=/usr/local/anaconda3
+if [[ $(uname -m) == 'arm64' ]]; then
+  conda_prefix=/opt/homebrew/anaconda3
+elif [[ $(uname) == 'Linux' ]]; then
+  conda_prefix=$HOME/miniconda3
 fi
-unset __conda_setup
-# <<< conda initialize <<<
+source $conda_prefix/etc/profile.d/conda.sh
 
-conda activate py39 &> /dev/null
+# Jenv
+export PATH=$HOME/.jenv/bin:$PATH
+eval "$(jenv init -)"
