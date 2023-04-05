@@ -147,6 +147,4 @@ elif [[ $(uname) == 'Linux' ]]; then
 fi
 source $conda_prefix/etc/profile.d/conda.sh
 
-# Jenv
-export PATH=$HOME/.jenv/bin:$PATH
-eval "$(jenv init -)"
+export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$PATH
