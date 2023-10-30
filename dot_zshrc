@@ -141,10 +141,11 @@ bindkey "^F" forward-word
 # Anaconda3
 conda_prefix=/usr/local/anaconda3
 if [[ $(uname -m) == 'arm64' ]]; then
-  conda_prefix=/opt/homebrew/anaconda3
+  conda_prefix=/opt/homebrew/Caskroom/miniconda/base
 elif [[ $(uname) == 'Linux' ]]; then
   conda_prefix=$HOME/miniconda3
 fi
 source $conda_prefix/etc/profile.d/conda.sh
 
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$PATH
+export PATH=/opt/homebrew/opt/openjdk@11/bin:$PATH
