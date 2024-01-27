@@ -15,7 +15,7 @@ obj.homepage = "https://github.com/Hammerspoon/Spoons"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
 
 obj.hcalw = 31*24+20
-obj.hcalh = 100
+obj.hcalh = 120
 obj.midlinecolor = {red=1, blue=1, gree=1, alpha=0.5}
 
 --- HCalendar.showProgress (Boolean)
@@ -103,7 +103,7 @@ function obj:createCanvas()
     local cscreen = hs.screen.mainScreen()
     local cres = cscreen:fullFrame()
     local canvas = hs.canvas.new({
-        x = 100,
+        x = 80,
         y = cres.h-obj.hcalh-40,
         w = obj.hcalw,
         h = obj.hcalh,
