@@ -138,12 +138,12 @@ bindkey "^F" forward-word
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Anaconda3
-conda_prefix=/usr/local/anaconda3
+# Miniconda
+conda_prefix=/usr/local/miniconda
 if [[ $(uname -m) == 'arm64' ]]; then
   conda_prefix=/opt/homebrew/Caskroom/miniconda/base
 elif [[ $(uname) == 'Linux' ]]; then
-  conda_prefix=$HOME/miniconda3
+  conda_prefix=$HOME/miniconda
 fi
 source $conda_prefix/etc/profile.d/conda.sh
 
