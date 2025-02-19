@@ -2,6 +2,33 @@
 # https://github.com/gpakosz/.tmux
 
 # -- display -------------------------------------------------------------------
+# RGB 24-bit colour support, possible values are:
+#   - true
+#   - false
+#   - auto (default)
+#
+# automatic detection relies on the COLORTERM environment variable being defined
+# to 'truecolor' or '24bit' or '$ tput colors' answering '16777216'
+# see https://github.com/termstandard/colors
+tmux_conf_24b_colour=auto
+
+# -- theming -------------------------------------------------------------------
+# enable or disable theming:
+#   - enabled (default)
+#   - disabled
+# when disabled, all tmux_conf_theme_xxx variables are ignored except:
+#   - tmux_conf_theme_pairing
+#   - tmux_conf_theme_prefix
+#   - tmux_conf_theme_mouse
+#   - tmux_conf_theme_root
+#   - tmux_conf_theme_synchronized
+tmux_conf_theme=enabled
+
+bind-key -T copy-mode    WheelUpPane   select-pane \; send-keys -X -N 1 scroll-up
+bind-key -T copy-mode    WheelDownPane select-pane \; send-keys -X -N 1 scroll-down
+bind-key -T copy-mode-vi WheelUpPane   select-pane \; send-keys -X -N 1 scroll-up
+bind-key -T copy-mode-vi WheelDownPane select-pane \; send-keys -X -N 1 scroll-down
+
 background="#2e3440"
 black="#3b4252"
 brightblack="#4c566a"
@@ -40,10 +67,10 @@ tmux_conf_theme_status_left=" ❐ #S "
 tmux_conf_theme_status_left_fg="$background"
 tmux_conf_theme_status_left_bg="$yellow"
 # status right style
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} | %a %b %d %R | #{username}#{root}@#{hostname} "
-tmux_conf_theme_status_right_fg="$background,$green,$yellow"
-tmux_conf_theme_status_right_bg="$green,$black,$brightblack"
-tmux_conf_theme_status_right_attr="none,none,none"
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} | %a %b %d %R | #{cpu_fg_color}CPU: #{cpu_percentage} | #{ram_fg_color}MEM: #{ram_percentage} | #{gram_fg_color}GPU: #{gram_percentage} #{gpu_fg_color}#{gpu_percentage} "
+tmux_conf_theme_status_right_fg="$background,$green,$yellow,$green,$green,$green"
+tmux_conf_theme_status_right_bg="$green,$brightblack,$black,$brightblack,$black,$brightblack"
+tmux_conf_theme_status_right_attr="none,none,none,none,none,none"
 
 # status line style (<prefix> + r,:)
 tmux_conf_theme_message_fg="$background"
@@ -79,9 +106,12 @@ tmux_conf_theme_root_attr="bold,blink"
 tmux_conf_theme_synchronized="⚏"       # U+268F
 
 # -- clipboard -----------------------------------------------------------------
-# on macOS, this requires installing reattach-to-user-namespace, see README.md
-# on Linux, this requires xsel or xclip
+# on Linux, this requires xsel, xclip or wl-copy
 tmux_conf_copy_to_os_clipboard=false
+
+# -- urlscan -------------------------------------------------------------------
+# options passed to urlscan
+tmux_conf_urlscan_options="--compact --dedupe"
 
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
@@ -110,11 +140,12 @@ unbind C-a
 
 # to enable a plugin, use the 'set -g @plugin' syntax:
 # visit https://github.com/tmux-plugins for available plugins
-# set -g @plugin 'tmux-plugins/tmux-copycat'
-# set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'tmux-plugins/tmux-cpu'
 # set -g @plugin 'tmux-plugins/tmux-resurrect'
-# set -g @plugin 'tmux-plugins/tmux-continuum'
-# set -g @continuum-restore 'on'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-restore 'on'
+set -g @continuum-save-interval '1'  # mintues, default: 15
 
 # -- custom variables ----------------------------------------------------------
 # EOF
