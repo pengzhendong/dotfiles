@@ -67,10 +67,10 @@ tmux_conf_theme_status_left=" ❐ #S "
 tmux_conf_theme_status_left_fg="$background"
 tmux_conf_theme_status_left_bg="$yellow"
 # status right style
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} | %a %b %d %R | #{cpu_fg_color}CPU: #{cpu_percentage} | #{ram_fg_color}MEM: #{ram_percentage} | #{gram_fg_color}GPU: #{gram_percentage} #{gpu_fg_color}#{gpu_percentage} "
-tmux_conf_theme_status_right_fg="$background,$green,$yellow,$green,$green,$green"
-tmux_conf_theme_status_right_bg="$green,$brightblack,$black,$brightblack,$black,$brightblack"
-tmux_conf_theme_status_right_attr="none,none,none,none,none,none"
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} | %a %b %d %R | #(tmux-mem-cpu-load --interval 2) "
+tmux_conf_theme_status_right_fg="$background,$cyan,$green"
+tmux_conf_theme_status_right_bg="$green,$brightblack,$black"
+tmux_conf_theme_status_right_attr="none,none,none"
 
 # status line style (<prefix> + r,:)
 tmux_conf_theme_message_fg="$background"
@@ -116,6 +116,9 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 set -g default-command zsh
+set -g history-limit 50000
+set -g status-interval 5
+setw -g aggressive-resize on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -140,12 +143,25 @@ unbind C-a
 
 # to enable a plugin, use the 'set -g @plugin' syntax:
 # visit https://github.com/tmux-plugins for available plugins
-set -g @plugin 'tmux-plugins/tmux-copycat'
 set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @continuum-restore 'on'
-set -g @continuum-save-interval '1'  # mintues, default: 15
+set -g @continuum-save-interval '15'
+# regex search (<prefix> + /, x.*y)
+set -g @plugin 'tmux-plugins/tmux-copycat'
+# kill the process running in the current pane (<prefix> + *)
+set -g @plugin 'tmux-plugins/tmux-cowboy'
+# logging current pane (<prefix> + shift + p)
+set -g @plugin 'tmux-plugins/tmux-logging'
+# popup action menu (<prefix> + space)
+set -g @plugin 'alexwforsythe/tmux-which-key'
+# popup menus to help (<prefix> + \)
+set -g @plugin 'jaclu/tmux-menus'
+# fuzzy find text (<prefix> + tab)
+set -g @plugin 'laktak/extrakto'
+# brew install tmux-mem-cpu-load
+set -g @plugin 'thewtex/tmux-mem-cpu-load'
 
 # -- custom variables ----------------------------------------------------------
 # EOF
