@@ -1,0 +1,168 @@
+patch:
+  style:
+    color_scheme: macos_light
+    color_scheme_dark: macos_dark
+    # color_scheme: wechat_light
+    # color_scheme_dark: wechat_dark
+
+  # https://gist.github.com/lewangdev/f8ebbba24f464e915fb7d36857fcbbe5
+  preset_color_schemes:
+    macos_light:
+      name: "MacOS 浅色／MacOS Light"
+      author: 小码哥
+      font_face: "PingFangSC" # 字体及大小
+      font_point: 16
+      label_font_face: "PingFangSC" # 序号字体及大小
+      label_font_point: 12
+      comment_font_face: "PingFangSC" # 注字体及大小
+      comment_font_point: 16
+      candidate_format: "%c\u2005%@\u2005" # 编号 %c 和候选词 %@ 前后的空间
+      candidate_list_layout: linear # 候选排布：层叠 stacked | 行 linear
+      text_orientation: horizontal # 行文向： 横 horizontal | 纵 vertical
+      inline_preedit: true # 拼音位于： 候选框 false | 行内 true
+      translucency: false # 磨砂： false | true
+      mutual_exclusive: false # 色不叠加： false | true
+      border_height: 1 # 外边框 高
+      border_width: 1 # 外边框 宽
+      corner_radius: 5 # 外边框 圆角半径
+      hilited_corner_radius: 5 # 选中框 圆角半径
+      surrounding_extra_expansion: 0 # 候选项背景相对大小？
+      shadow_size: 0 # 阴影大小
+      line_spacing: 5 # 行间距
+      base_offset: 0 # 字基高
+      alpha: 1 # 透明度，0~1
+      spacing: 10 # 拼音与候选项之间的距离 （inline_preedit: false）
+      color_space: srgb # 色彩空间： srgb | display_p3
+      back_color: 0xFFFFFF # 底色
+      hilited_candidate_back_color: 0xD75A00 # 选中底色
+      label_color: 0x999999 # 序号颜色
+      hilited_candidate_label_color: 0xFFFFFF # 选中序号颜色
+      candidate_text_color: 0x3c3c3c # 文字颜色
+      hilited_candidate_text_color: 0xFFFFFF # 选中文字颜色
+      comment_text_color: 0x999999 # 注颜色
+      hilited_comment_text_color: 0xFFFFFF # 选中注颜色
+      text_color: 0x424242 # 拼音颜色 （inline_preedit: false）
+      hilited_text_color: 0xFFFFFF # 选中拼音颜色 （inline_preedit: false）
+      candidate_back_color: 0xFFFFFF # 候选项底色
+      hilited_back_color: 0xD75A00 # 选中拼音底色 （inline_preedit: false）
+      border_color: 0xFFFFFF # 外边框颜色
+
+    macos_dark:
+      name: "MacOS 深色／MacOS Dark"
+      author: 小码哥
+      font_face: "PingFangSC"
+      font_point: 16
+      label_font_face: "PingFangSC"
+      label_font_point: 12
+      comment_font_face: "PingFangSC"
+      comment_font_point: 16
+      candidate_format: "%c\u2005%@\u2005"
+      candidate_list_layout: linear
+      text_orientation: horizontal
+      inline_preedit: true
+      translucency: false
+      mutual_exclusive: false
+      border_height: 1
+      border_width: 1
+      corner_radius: 5
+      hilited_corner_radius: 5
+      surrounding_extra_expansion: 0
+      shadow_size: 0
+      line_spacing: 5
+      base_offset: 0
+      alpha: 1
+      spacing: 10
+      color_space: srgb
+      back_color: 0x1f1e2d
+      hilited_candidate_back_color: 0xD75A00
+      label_color: 0x999999
+      hilited_candidate_label_color: 0xFFFFFF
+      candidate_text_color: 0xe9e9ea
+      hilited_candidate_text_color: 0xFFFFFF
+      comment_text_color: 0x999999
+      hilited_comment_text_color: 0x999999
+      text_color: 0x808080
+      hilited_text_color: 0xFFFFFF
+      candidate_back_color: 0x1f1e2d
+      hilited_back_color: 0xD75A00
+      border_color: 0x050505
+
+    wechat_light:
+      name: "微信浅色／Wechat Light"
+      author: 小码哥
+      font_face: "PingFangSC"
+      font_point: 16
+      label_font_face: "PingFangSC"
+      label_font_point: 13
+      comment_font_face: "PingFangSC"
+      comment_font_point: 16
+      candidate_format: "%c\u2005%@\u2005"
+      candidate_list_layout: linear
+      text_orientation: horizontal
+      inline_preedit: true
+      translucency: false
+      mutual_exclusive: false
+      border_height: 1
+      border_width: 1
+      corner_radius: 5
+      hilited_corner_radius: 5
+      surrounding_extra_expansion: 0
+      shadow_size: 0
+      line_spacing: 5
+      base_offset: 0
+      alpha: 1
+      spacing: 10
+      color_space: srgb
+      back_color: 0xFFFFFF
+      hilited_candidate_back_color: 0x79af22
+      label_color: 0x999999
+      hilited_candidate_label_color: 0xFFFFFF
+      candidate_text_color: 0x3c3c3c
+      hilited_candidate_text_color: 0xFFFFFF
+      comment_text_color: 0x999999
+      hilited_comment_text_color: 0x999999
+      text_color: 0x424242
+      hilited_text_color: 0x999999
+      candidate_back_color: 0xFFFFFF
+      hilited_back_color: 0x79af22
+      border_color: 0xFFFFFF
+
+    wechat_dark:
+      name: "微信深色／Wechat Dark"
+      author: 小码哥
+      font_face: "PingFangSC"
+      font_point: 16
+      label_font_face: "PingFangSC"
+      label_font_point: 13
+      comment_font_face: "PingFangSC"
+      comment_font_point: 16
+      candidate_format: "%c\u2005%@\u2005"
+      candidate_list_layout: linear
+      text_orientation: horizontal
+      inline_preedit: true
+      translucency: false
+      mutual_exclusive: false
+      border_height: 1
+      border_width: 1
+      corner_radius: 5
+      hilited_corner_radius: 5
+      surrounding_extra_expansion: 0
+      shadow_size: 0
+      line_spacing: 5
+      base_offset: 0
+      alpha: 1
+      spacing: 10
+      color_space: srgb
+      back_color: 0x151515
+      hilited_candidate_back_color: 0x79af22
+      label_color: 0x999999
+      hilited_candidate_label_color: 0xFFFFFF
+      candidate_text_color: 0xbbbbbb
+      hilited_candidate_text_color: 0xFFFFFF
+      comment_text_color: 0x999999
+      hilited_comment_text_color: 0xFFFFFF
+      text_color: 0xbbbbbb
+      hilited_text_color: 0x999999
+      candidate_back_color: 0x151515
+      hilited_back_color: 0x79af22
+      border_color: 0x292929
