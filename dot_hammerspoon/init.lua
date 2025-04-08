@@ -5,13 +5,13 @@ hs.window.animationDuration = 0
 -- Reload configuration
 hs.hotkey.bind({"cmd", "shift", "ctrl"}, "R", function() hs.reload() end)
 -- Register lock screen
-hs.hotkey.bind("ctrl", "L", function() hs.caffeinate.lockScreen() end)
+hs.hotkey.bind({"alt", "cmd"}, "L", function() hs.caffeinate.lockScreen() end)
 -- Register windowHints
-hs.hotkey.bind("ctrl", "Tab", function() hs.hints.windowHints() end)
+hs.hotkey.bind({"alt", "cmd"}, "Tab", function() hs.hints.windowHints() end)
 -- Register Hammerspoon console
-hs.hotkey.bind("ctrl", "Z", function() hs.toggleConsole() end)
+hs.hotkey.bind({"alt", "cmd"}, "Z", function() hs.toggleConsole() end)
 -- Register Hammerspoon API manual: Open Hammerspoon manual in default browser
-hs.hotkey.bind("ctrl", "H", function() hs.doc.hsdocs.forceExternalBrowser(true) hs.doc.hsdocs.moduleEntitiesInSidebar(true) hs.doc.hsdocs.help() end)
+hs.hotkey.bind({"alt", "cmd"}, "H", function() hs.doc.hsdocs.forceExternalBrowser(true) hs.doc.hsdocs.moduleEntitiesInSidebar(true) hs.doc.hsdocs.help() end)
 
 -- Use SpoonInstall Spoon to install other Spoons
 hs.loadSpoon("SpoonInstall")
@@ -36,7 +36,7 @@ end
 --------------------------------------------------------------------------------
 -- 用于查看当前 App 快捷键
 Install:andUse("KSheet", { fn = function(s)
-    hs.hotkey.bind("ctrl", "S", function() spoon.KSheet:show() spoon.ModalMgr:deactivateAll() spoon.ModalMgr:activate({"cheatsheetM"}) end)
+    hs.hotkey.bind({"alt", "cmd"}, "S", function() spoon.KSheet:show() spoon.ModalMgr:deactivateAll() spoon.ModalMgr:activate({"cheatsheetM"}) end)
 end})
 if spoon.KSheet then
     spoon.ModalMgr:new("cheatsheetM")
@@ -47,7 +47,7 @@ end
 
 --------------------------------------------------------------------------------
 Install:andUse("WinWin", { fn = function(s)
-    hs.hotkey.bind("ctrl", "T", function() spoon.ModalMgr:deactivateAll() spoon.ModalMgr:activate({"resizeM"}, "#B22222") end)
+    hs.hotkey.bind({"alt", "cmd"}, "R", function() spoon.ModalMgr:deactivateAll() spoon.ModalMgr:activate({"resizeM"}, "#B22222") end)
 end})
 if spoon.WinWin then
     spoon.ModalMgr:new("resizeM")

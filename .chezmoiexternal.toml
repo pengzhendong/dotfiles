@@ -22,8 +22,3 @@
   [".tmux".pull]
     args = ["--ff-only"]
 
-["Library/Rime"]
-  type = "git-repo"
-  url = "https://github.com/iDvel/rime-ice.git"
-  ["Library/Rime".pull]
-    args = ["--ff-only"]
