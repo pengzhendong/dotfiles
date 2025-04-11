@@ -42,7 +42,6 @@ if spoon.KSheet then
     spoon.ModalMgr:new("cheatsheetM")
     local cmodal = spoon.ModalMgr.modal_list["cheatsheetM"]
     cmodal:bind('', 'escape', '退出', function() spoon.KSheet:hide() spoon.ModalMgr:deactivate({"cheatsheetM"}) end)
-    cmodal:bind('', 'Q', '退出', function() spoon.KSheet:hide() spoon.ModalMgr:deactivate({"cheatsheetM"}) end)
 end
 
 --------------------------------------------------------------------------------
@@ -53,7 +52,6 @@ if spoon.WinWin then
     spoon.ModalMgr:new("resizeM")
     local cmodal = spoon.ModalMgr.modal_list["resizeM"]
     cmodal:bind('', 'escape', '退出', function() spoon.ModalMgr:deactivate({"resizeM"}) end)
-    cmodal:bind('', 'Q', '退出', function() spoon.ModalMgr:deactivate({"resizeM"}) end)
     cmodal:bind('', 'tab', '键位提示', function() spoon.ModalMgr:toggleCheatsheet() end)
     cmodal:bind('', 'A', '向左移动', function() spoon.WinWin:stepMove("left") end, nil, function() spoon.WinWin:stepMove("left") end)
     cmodal:bind('', 'D', '向右移动', function() spoon.WinWin:stepMove("right") end, nil, function() spoon.WinWin:stepMove("right") end)
