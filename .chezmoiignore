@@ -12,6 +12,8 @@ README.md
 
 # Ignore non-MacOS files.
 {{ if ne .chezmoi.os "darwin" }}
+Library
+.config
 .hammerspoon
 .lrzsz
 {{ end }}
