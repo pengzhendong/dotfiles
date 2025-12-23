@@ -161,7 +161,7 @@ set -g @plugin 'jaclu/tmux-menus'
 # fuzzy find text (<prefix> + tab)
 # brew install fzf
 set -g @plugin 'laktak/extrakto'
-# brew install coreutils gawk net-tools
+# brew install coreutils gawk # net-tools (for Linux)
 set -g @plugin 'xamut/tmux-network-bandwidth'
 # brew install tmux-mem-cpu-load
 set -g @plugin 'thewtex/tmux-mem-cpu-load'
