@@ -67,7 +67,7 @@ tmux_conf_theme_status_left=" ❐ #S "
 tmux_conf_theme_status_left_fg="$background"
 tmux_conf_theme_status_left_bg="$yellow"
 # status right style
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} | #{network_bandwidth} | #(tmux-mem-cpu-load --interval 2) "
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} | #{network_bandwidth} | #(tmux-mem-cpu-load -a 2 -v) "
 tmux_conf_theme_status_right_fg="$background,$cyan,$green"
 tmux_conf_theme_status_right_bg="$green,$brightblack,$black"
 tmux_conf_theme_status_right_attr="none,none,none"
