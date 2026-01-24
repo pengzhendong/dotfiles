@@ -16,5 +16,6 @@ Library
 .config
 .hammerspoon
 .lrzsz
+.unison
 {{ end }}
 

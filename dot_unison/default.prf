@@ -1,0 +1,26 @@
+# Unison preferences file
+# brew install unison
+# brew install autozimu/homebrew-formulas/unison-fsmonitor  # for macos
+
+root = /Users/pengzhendong
+root = ssh://z4pro//home/pengzhendong/docker
+
+path = Documents
+
+# 10MB = 10 * 1024KB
+maxsizethreshold = 10240
+
+ignore = Name .DS_Store
+ignore = Name .git
+ignore = Name *.tmp
+ignore = Name *.log
+ignore = Name *.cache
+
+auto = true
+batch = true
+confirmbigdel = true
+fastcheck = true
+repeat = watch+60
+retry = 3
+silent = false
+terse = false
