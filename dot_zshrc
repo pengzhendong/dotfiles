@@ -140,11 +140,3 @@ bindkey "^[[Z" menu-complete
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Miniforge
-conda_prefix=/opt/homebrew/Caskroom/miniforge/base
-if [[ $(uname) == 'Linux' ]]; then
-  conda_prefix=$HOME/miniforge3
-fi
-source $conda_prefix/etc/profile.d/conda.sh
-
-export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$PATH
