@@ -2,8 +2,6 @@
 [ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [ -f ${HOME}/.linuxbrew/bin/brew ] && eval "$(${HOME}/.linuxbrew/bin/brew shellenv)"
-export HOMEBREW_API_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api
-export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$PATH
 
 # Miniforge
