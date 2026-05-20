@@ -124,7 +124,7 @@ zinit for \
 
 zinit light-mode $([ -n "$wait" ] && echo "wait") lucid for \
   zdharma-continuum/history-search-multi-word \
-  atinit='zpcompinit' zdharma-continuum/fast-syntax-highlighting \
+  atinit='autoload -Uz compinit; compinit -i' zdharma-continuum/fast-syntax-highlighting \
   atload'_zsh_autosuggest_start' zsh-users/zsh-autosuggestions \
   Aloxaf/fzf-tab \
   chrissicool/zsh-256color \
