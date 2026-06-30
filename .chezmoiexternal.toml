@@ -22,3 +22,7 @@
   [".tmux".pull]
     args = ["--ff-only"]
 
+["Library/Rime"]
+  type = "archive"
+  url = "https://github.com/iDvel/rime-ice/archive/refs/heads/main.tar.gz"
+  stripComponents = 1
