@@ -22,6 +22,20 @@
   [".tmux".pull]
     args = ["--ff-only"]
 
+[".config/nvim"]
+  type = "git-repo"
+  url = "git@github.com:LazyVim/starter.git"
+  [".config/nvim".pull]
+    args = ["--ff-only"]
+
+["Library/Application Support/iTerm2/ColorSchemes/iterm2-color-schemes"]
+  type = "git-repo"
+  url = "https://github.com/mbadolato/iTerm2-Color-Schemes.git"
+  ["Library/Application Support/iTerm2/ColorSchemes/iterm2-color-schemes".clone]
+    args = ["--depth=1"]
+  ["Library/Application Support/iTerm2/ColorSchemes/iterm2-color-schemes".pull]
+    args = ["--ff-only"]
+
 ["Library/Rime"]
   type = "archive"
   url = "https://github.com/iDvel/rime-ice/archive/refs/heads/main.tar.gz"

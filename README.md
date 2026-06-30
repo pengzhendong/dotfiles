@@ -26,3 +26,13 @@ After changing installed packages locally, update the list with:
 ```bash
 brew bundle dump --file ~/.local/share/chezmoi/Brewfile --force --no-vscode --no-mas --no-go --no-cargo --no-uv --no-flatpak --no-winget --no-krew --no-npm --no-describe
 ```
+
+## Externals
+
+chezmoi manages several external resources in `.chezmoiexternal.toml`:
+
+- `~/.config/nvim`: LazyVim starter
+- `~/Library/Rime`: rime-ice
+- `~/Library/Application Support/iTerm2/ColorSchemes/iterm2-color-schemes`: iTerm2 color schemes
+
+iTerm2 color presets are imported into iTerm2 preferences after choosing a theme.

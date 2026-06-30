@@ -12,8 +12,13 @@ brew "rsync"
 brew "sox"
 brew "tmux"
 brew "tmux-mem-cpu-load"
+brew "unison"
 brew "uv"
 brew "wget"
+
+# Fonts
+cask "font-jetbrains-mono-nerd-font"
+cask "font-maple-mono-nf-cn"
 
 # AI and developer apps
 cask "claude-code"
