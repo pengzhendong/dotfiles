@@ -9,6 +9,7 @@
 
 LICENSE
 README.md
+Brewfile
 
 # Ignore non-MacOS files.
 {{ if ne .chezmoi.os "darwin" }}
