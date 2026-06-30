@@ -1,0 +1,12 @@
+Host *
+  ControlMaster auto
+  ControlPath ~/.ssh/%C
+  ControlPersist yes
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
+
+Host z4pro
+  HostName pzd17.dynv6.net
+  User pengzhendong
+  Port 10000
+  ProxyCommand nc -6 $(dig AAAA %h @8.8.8.8 +short | head -1) %p
