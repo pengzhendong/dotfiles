@@ -1,6 +1,7 @@
 # CLI tools
 brew "aria2"
 brew "autojump"
+brew "bun" # JS runtime for claude-hud statusline
 brew "chezmoi"
 brew "coreutils"
 brew "ffmpeg"

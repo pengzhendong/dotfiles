@@ -11,6 +11,27 @@ LICENSE
 README.md
 Brewfile
 
+# ~/.claude — only manage settings.json (minus env) and the claude-hud config.
+# cc-switch owns the `env` block in the live settings.json; everything else
+# here is runtime state, caches, secrets, or reproducible via /plugin install.
+.claude/settings.local.json
+.claude/settings.json.bak.*
+.claude/sessions
+.claude/history.jsonl
+.claude/projects
+.claude/backups
+.claude/telemetry
+.claude/shell-snapshots
+.claude/session-env
+.claude/.last-cleanup
+.claude/plugins/cache
+.claude/plugins/marketplaces
+.claude/plugins/installed_plugins.json
+.claude/plugins/known_marketplaces.json
+.claude/plugins/claude-hud/config-cache
+.claude/plugins/claude-hud/context-cache
+.claude/plugins/claude-hud/transcript-cache
+
 # Ignore non-MacOS files.
 {{ if ne .chezmoi.os "darwin" }}
 Library

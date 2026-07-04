@@ -1,0 +1,12 @@
+{
+  "language": "en",
+  "lineLayout": "compact",
+  "showSeparators": false,
+  "display": {
+    "modelFormat": "compact",
+    "showDuration": true,
+    "showTools": true,
+    "showAgents": true,
+    "showTodos": true
+  }
+}
