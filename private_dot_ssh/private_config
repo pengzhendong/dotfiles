@@ -6,7 +6,7 @@ Host *
   ServerAliveCountMax 3
 
 Host github.com
-  ProxyCommand nc -X 5 -x 127.0.0.1:7891 %h %p
+  ProxyCommand nc -X 5 -x 127.0.0.1:7890 %h %p
 
 Host z4pro
   HostName pzd17.dynv6.net
