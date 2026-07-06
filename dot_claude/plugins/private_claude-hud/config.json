@@ -7,6 +7,13 @@
     "showDuration": true,
     "showTools": true,
     "showAgents": true,
-    "showTodos": true
+    "showTodos": true,
+    "showConfigCounts": true,
+    "showContextBar": true,
+    "showTokenBreakdown": true,
+    "showSpeed": true,
+    "showSessionTokens": true,
+    "showCost": false,
+    "showUsage": true
   }
 }
