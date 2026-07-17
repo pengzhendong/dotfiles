@@ -27,8 +27,6 @@ cask "codex"
 cask "visual-studio-code"
 
 # Desktop apps
-cask "cc-switch"
-cask "feishu"
 cask "google-chrome"
 cask "keepassxc"
 cask "obsidian"
