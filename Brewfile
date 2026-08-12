@@ -28,7 +28,6 @@ cask "visual-studio-code"
 
 # Desktop apps
 cask "google-chrome"
-cask "keepassxc"
 cask "obsidian"
 cask "raycast"
 cask "thaw"
