@@ -29,7 +29,6 @@ cask "visual-studio-code"
 # Desktop apps
 cask "google-chrome"
 cask "obsidian"
-cask "raycast"
 cask "thaw"
 cask "warp"
 cask "wechat"
