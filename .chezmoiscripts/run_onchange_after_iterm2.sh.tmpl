@@ -42,3 +42,6 @@ defaults write "$domain" "$default_key" -string "$guid"
 defaults write "$domain" DimInactiveSplitPanes -bool false
 defaults write "$domain" DimBackgroundWindows -bool false
 defaults write "$domain" DimOnlyText -bool false
+
+# A click should only focus a pane, not select its command and shade the rest.
+defaults write "$domain" ClickToSelectCommand -bool false
