@@ -46,3 +46,10 @@ chezmoi manages Warp keybindings and merges shared preferences into
 `~/.warp/settings.toml`. Edit `.chezmoitemplates/warp-settings.toml` to change
 the shared settings. Warp account settings, agent configuration, and MCP
 servers are configured per installation.
+
+## Launcher
+
+`chezmoi apply` writes the shared Tinycast preferences: the ⌥Space palette
+hotkey, compact mode, extension and quick action switches, the interface
+language, and launcher aliases (merged, so aliases added in the app on another
+machine survive). Restart Tinycast after a change.
