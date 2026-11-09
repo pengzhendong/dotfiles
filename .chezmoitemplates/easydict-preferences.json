@@ -1,0 +1,92 @@
+{
+  "enableDetectLanguageSpeedFirst": {
+    "bool": {
+      "_0": true
+    }
+  },
+  "aiQueryCacheMode": {
+    "string": {
+      "_0": "off"
+    }
+  },
+  "language2": {
+    "string": {
+      "_0": "en"
+    }
+  },
+  "enableBaiduLanguageDetect": {
+    "bool": {
+      "_0": true
+    }
+  },
+  "enableAutomaticPlayWordAudio": {
+    "bool": {
+      "_0": true
+    }
+  },
+  "geminiModel": {
+    "string": {
+      "_0": "gemini-3.5-flash"
+    }
+  },
+  "ankiDeckName": {
+    "string": {
+      "_0": "Easydict"
+    }
+  },
+  "openAIModel": {
+    "string": {
+      "_0": "gpt-5.4-mini"
+    }
+  },
+  "enableBingTranslate": {
+    "bool": {
+      "_0": true
+    }
+  },
+  "enableYoudaoDictionary": {
+    "bool": {
+      "_0": true
+    }
+  },
+  "enableDeepLXTranslate": {
+    "bool": {
+      "_0": true
+    }
+  },
+  "ankiConnectUrl": {
+    "string": {
+      "_0": "http://127.0.0.1:8765"
+    }
+  },
+  "geminiAPIURL": {
+    "string": {
+      "_0": "https://generativelanguage.googleapis.com"
+    }
+  },
+  "enableLingueeDictionary": {
+    "bool": {
+      "_0": true
+    }
+  },
+  "enableAutomaticQuerySelectedText": {
+    "bool": {
+      "_0": true
+    }
+  },
+  "queryCacheMode": {
+    "string": {
+      "_0": "off"
+    }
+  },
+  "openAIAPIURL": {
+    "string": {
+      "_0": "https://api.openai.com/v1"
+    }
+  },
+  "language1": {
+    "string": {
+      "_0": "zh-CHS"
+    }
+  }
+}

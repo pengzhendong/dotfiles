@@ -1,0 +1,10 @@
+# chezmoi:modify-template
+{{- $current := dict -}}
+{{- if .chezmoi.stdin -}}
+{{- $current = .chezmoi.stdin | fromJson -}}
+{{- end -}}
+{{- $preferences := index $current "preferences" | default dict -}}
+{{- $portable := includeTemplate "easydict-preferences.json" | fromJson -}}
+{{- $merged := mustMergeOverwrite (deepCopy $preferences) $portable -}}
+{{- $_ := set $current "preferences" $merged -}}
+{{- $current | toJson -}}
