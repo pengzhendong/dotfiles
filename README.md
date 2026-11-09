@@ -41,6 +41,7 @@ iTerm2 color presets are imported into iTerm2 preferences after choosing a theme
 
 `chezmoi apply` installs the `Dotfiles` profile in iTerm2 and sets it as the
 default for new sessions. iTerm2 reads the updated preferences on launch.
+Clicking a command does not select it or shade the rest of the terminal.
 
 chezmoi manages Warp keybindings and merges shared preferences into
 `~/.warp/settings.toml`. Edit `.chezmoitemplates/warp-settings.toml` to change
