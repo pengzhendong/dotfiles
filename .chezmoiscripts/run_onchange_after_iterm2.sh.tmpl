@@ -37,3 +37,8 @@ plutil -insert "$bookmarks.$index" -xml "$profile" "$prefs"
 updated_bookmarks=$(plutil -extract "$bookmarks" xml1 -o - "$prefs")
 defaults write "$domain" "$bookmarks" "$updated_bookmarks"
 defaults write "$domain" "$default_key" -string "$guid"
+
+# Keep inactive split panes and background windows from dimming.
+defaults write "$domain" DimInactiveSplitPanes -bool false
+defaults write "$domain" DimBackgroundWindows -bool false
+defaults write "$domain" DimOnlyText -bool false
