@@ -1,0 +1,9 @@
+# chezmoi:modify-template
+{{- $current := .chezmoi.stdin | fromToml -}}
+{{- $portable := includeTemplate "warp-settings.toml" | fromToml -}}
+{{- $merged := mustMergeOverwrite (deepCopy $current) $portable -}}
+{{- if eq (mustToJson $current) (mustToJson $merged) -}}
+{{- .chezmoi.stdin -}}
+{{- else -}}
+{{- $merged | toToml -}}
+{{- end -}}

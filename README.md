@@ -36,3 +36,13 @@ chezmoi manages several external resources in `.chezmoiexternal.toml`:
 - `~/Library/Application Support/iTerm2/ColorSchemes/iterm2-color-schemes`: iTerm2 color schemes
 
 iTerm2 color presets are imported into iTerm2 preferences after choosing a theme.
+
+## Terminals
+
+iTerm2 loads the `Dotfiles` dynamic profile after `chezmoi apply`. Set it as the
+default under **Settings → Profiles** if you want new sessions to use it.
+
+chezmoi manages Warp keybindings and merges shared preferences into
+`~/.warp/settings.toml`. Edit `.chezmoitemplates/warp-settings.toml` to change
+the shared settings. Warp account settings, agent configuration, and MCP
+servers are configured per installation.

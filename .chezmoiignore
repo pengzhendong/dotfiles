@@ -37,6 +37,7 @@ Brewfile
 Library
 .config
 .hammerspoon
+.warp
 .lrzsz
 .unison
 {{ end }}
