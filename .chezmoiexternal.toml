@@ -24,7 +24,7 @@
 
 [".config/nvim"]
   type = "git-repo"
-  url = "git@github.com:LazyVim/starter.git"
+  url = "https://github.com/LazyVim/starter.git"
   [".config/nvim".pull]
     args = ["--ff-only"]
 

@@ -6,5 +6,9 @@
 {{- $preferences := index $current "preferences" | default dict -}}
 {{- $portable := includeTemplate "easydict-preferences.json" | fromJson -}}
 {{- $merged := mustMergeOverwrite (deepCopy $preferences) $portable -}}
+{{- if eq (mustToJson $preferences) (mustToJson $merged) -}}
+{{- .chezmoi.stdin -}}
+{{- else -}}
 {{- $_ := set $current "preferences" $merged -}}
-{{- $current | toJson -}}
+{{- $current | mustToJson -}}
+{{- end -}}
