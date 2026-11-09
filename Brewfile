@@ -1,8 +1,6 @@
 # CLI tools
 brew "aria2"
 brew "autojump"
-brew "bun" # JS runtime for claude-hud statusline
-brew "chezmoi"
 brew "coreutils"
 brew "ffmpeg"
 brew "fzf"
@@ -10,10 +8,8 @@ brew "gawk"
 brew "gh"
 brew "neovim"
 brew "rsync"
-brew "sox"
 brew "tmux"
 brew "tmux-mem-cpu-load"
-brew "unison"
 brew "uv"
 brew "wget"
 
@@ -22,7 +18,6 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-maple-mono-nf-cn"
 
 # AI and developer apps
-cask "claude-code"
 cask "codex"
 cask "visual-studio-code"
 
@@ -31,7 +26,6 @@ cask "google-chrome"
 cask "obsidian"
 cask "thaw"
 cask "warp"
-cask "wechat"
 
 # Media apps
 cask "iina"
