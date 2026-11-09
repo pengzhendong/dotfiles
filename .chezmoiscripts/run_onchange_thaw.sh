@@ -5,11 +5,17 @@ set -eu
 
 [ "$(uname -s)" = Darwin ] || exit 0
 
+# Restart with killall rather than AppleScript so applying never needs
+# Automation permission.
 was_running=0
 if pgrep -x Thaw >/dev/null; then
   was_running=1
-  osascript -e 'quit app "Thaw"' >/dev/null 2>&1 || killall Thaw
-  sleep 1
+  killall Thaw 2>/dev/null || true
+  i=0
+  while pgrep -x Thaw >/dev/null && [ "$i" -lt 20 ]; do
+    sleep 0.1
+    i=$((i + 1))
+  done
 fi
 
 defaults write com.stonerl.Thaw AllowsBetaUpdates -bool true
