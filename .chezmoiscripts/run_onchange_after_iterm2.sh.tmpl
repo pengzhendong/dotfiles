@@ -1,0 +1,39 @@
+#!/bin/sh
+set -eu
+
+[ "$(uname -s)" = Darwin ] || exit 0
+
+domain=com.googlecode.iterm2
+bookmarks='New Bookmarks'
+default_key='Default Bookmark Guid'
+
+profile=$(plutil -extract Profiles.0 xml1 -o - - <<'PROFILE'
+{{ includeTemplate "iterm2-profile.json" -}}
+PROFILE
+)
+guid=$(printf '%s\n' "$profile" | plutil -extract Guid raw -o - -)
+
+prefs=$(mktemp)
+trap 'unlink "$prefs"' EXIT
+if ! defaults export "$domain" - > "$prefs" 2>/dev/null; then
+  plutil -create xml1 "$prefs"
+fi
+if ! count=$(plutil -extract "$bookmarks" raw -expect array -o - "$prefs" 2>/dev/null); then
+  plutil -insert "$bookmarks" -array "$prefs"
+  count=0
+fi
+
+index=0
+while [ "$index" -lt "$count" ]; do
+  entry_guid=$(plutil -extract "$bookmarks.$index.Guid" raw -o - "$prefs" 2>/dev/null || true)
+  [ "$entry_guid" != "$guid" ] || break
+  index=$((index + 1))
+done
+
+if [ "$index" -lt "$count" ]; then
+  plutil -remove "$bookmarks.$index" "$prefs"
+fi
+plutil -insert "$bookmarks.$index" -xml "$profile" "$prefs"
+updated_bookmarks=$(plutil -extract "$bookmarks" xml1 -o - "$prefs")
+defaults write "$domain" "$bookmarks" "$updated_bookmarks"
+defaults write "$domain" "$default_key" -string "$guid"
