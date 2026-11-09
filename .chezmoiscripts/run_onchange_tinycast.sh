@@ -12,6 +12,7 @@ defaults write "$domain" "hotkey.togglePalette" -string \
 defaults write "$domain" compactMode -bool false
 defaults write "$domain" extensionsEnabled -bool true
 defaults write "$domain" extensionsShowInLauncher -bool true
+defaults write "$domain" AppleLanguages -array zh-Hans
 defaults write "$domain" quickActionsEnabled -bool true
 defaults write "$domain" quickActionLanguage -string zh
 
