@@ -53,3 +53,7 @@ servers are configured per installation.
 hotkey, compact mode, extension and quick action switches, the interface
 language, and launcher aliases (merged, so aliases added in the app on another
 machine survive). Restart Tinycast after a change.
+
+Extension command preferences are merged too, currently EasyDict. Only its
+`preferences` are managed; caches, OAuth tokens and local storage stay on each
+machine. Edit `.chezmoitemplates/easydict-preferences.json` to change them.
