@@ -10,6 +10,7 @@ brew "neovim"
 brew "rsync"
 brew "tmux"
 brew "tmux-mem-cpu-load"
+brew "unison"
 brew "uv"
 brew "wget"
 

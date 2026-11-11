@@ -11,26 +11,34 @@ LICENSE
 README.md
 Brewfile
 
-# ~/.claude — only manage settings.json (minus env) and the claude-hud config.
-# cc-switch owns the `env` block in the live settings.json; everything else
-# here is runtime state, caches, secrets, or reproducible via /plugin install.
-.claude/settings.local.json
-.claude/settings.json.bak.*
-.claude/sessions
-.claude/history.jsonl
-.claude/projects
-.claude/backups
-.claude/telemetry
-.claude/shell-snapshots
-.claude/session-env
-.claude/.last-cleanup
-.claude/plugins/cache
-.claude/plugins/marketplaces
-.claude/plugins/installed_plugins.json
-.claude/plugins/known_marketplaces.json
-.claude/plugins/claude-hud/config-cache
-.claude/plugins/claude-hud/context-cache
-.claude/plugins/claude-hud/transcript-cache
+# ~/.claude — NOT managed anymore (dot_claude removed from this repo).
+.claude
+
+# ~/.dsh — manage only the static configuration. Everything else is secrets,
+# runtime state, caches, or reproducible via `dsh plugin add`.
+#
+# Managed: .dsh/cordis.patch.yml, .dsh/profiles/desktop/{package.json,cordis.yml,cordis.patch.yml}
+#
+# Secrets — never commit tokens, API keys, or the device identity.
+.dsh/.credentials.yaml
+.dsh/.anonymous-user-id
+.dsh/llm-deepseek
+
+# Runtime state, user content, and caches.
+.dsh/sessions
+.dsh/attachments
+.dsh/cache
+.dsh/storages
+
+# Reproducible or generated: plugin deps, lockfile, browser helper build.
+.dsh/profiles/*/node_modules
+.dsh/profiles/*/pnpm-lock.yaml
+.dsh/profiles/*/pnpm-workspace.yaml
+.dsh/dsh-browser
+
+# Local backups written by plugin-manager / upgrades.
+.dsh/profiles/*/*.bak*
+.dsh/profiles/*/*.before-*
 
 # Ignore non-MacOS files.
 {{ if ne .chezmoi.os "darwin" }}
