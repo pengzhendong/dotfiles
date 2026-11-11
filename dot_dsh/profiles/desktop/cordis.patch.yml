@@ -1,0 +1,162 @@
+- id: locale
+  name: "@deepseek-ai/dsh-client-locale"
+  config:
+    preference: zh
+- id: llm-pi-ai
+  config:
+    providers:
+      aliyun-token-plan:
+        displayName: 阿里云 Token Plan
+        apiKeyEnv: ALIYUN_TOKEN_PLAN_API_KEY
+        api: openai-completions
+        baseURL: https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1
+        compat:
+          supportsDeveloperRole: false
+          maxTokensField: max_tokens
+          supportsReasoningEffort: true
+          thinkingFormat: qwen
+        models:
+          - id: deepseek-v4.1-flash
+            name: DeepSeek V4.1 Flash
+            contextWindow: 512000
+            input:
+              - text
+              - image
+            reasoningEfforts:
+              low: low
+              high: high
+              max: max
+          - id: deepseek-v4-pro
+            name: DeepSeek V4 Pro
+            contextWindow: 512000
+            input:
+              - text
+            reasoningEfforts:
+              low: low
+              high: high
+              max: max
+          - id: glm-5.3
+            name: GLM-5.3
+            contextWindow: 200000
+            input:
+              - text
+            reasoningEfforts:
+              low: low
+              high: high
+              max: max
+          - id: glm-5.2
+            name: GLM-5.2
+            contextWindow: 200000
+            input:
+              - text
+            reasoningEfforts:
+              low: low
+              high: high
+              max: max
+- id: ui-chat
+  name: "@deepseek-ai/dsh-client-ui-chat"
+  config:
+    transcriptView: standard
+    performanceUsage: detailed
+- id: ui-settings
+  name: "@deepseek-ai/dsh-client-ui-settings"
+  config:
+    enabled: true
+- id: ui-settings-account
+  name: "@deepseek-ai/dsh-client-ui-settings-account"
+  config:
+    version: 1
+    step: done
+    usage: detailed
+    developerTools: true
+    purpose: null
+    process: standard
+    completion: api-key
+- id: agent-default-model
+  name: "@deepseek-ai/dsh-agent-default-model"
+  config:
+    provider: aliyun-token-plan
+    model: deepseek-v4.1-flash
+- id: cost-meter
+  name: dsh-cost-meter
+  config:
+    locale: zh
+    currency: CNY
+    peakEnabled: true
+    prices:
+      currency: CNY
+      providers:
+        aliyun-token-plan:
+          peakWindows:
+            - start: 14
+              end: 0
+          peakSchedule: daily
+          peakHolidays: null
+          models:
+            deepseek-v4.1-flash:
+              currency: CNY
+              billingMode: deepseek-peak
+              cacheMiss: 2
+              cacheHit: 0.04
+              output: 8
+            deepseek-v4.1-flash-1017:
+              currency: CNY
+              billingMode: deepseek-peak
+              cacheMiss: 2
+              cacheHit: 0.04
+              output: 8
+            deepseek-v4-pro:
+              currency: CNY
+              billingMode: deepseek-peak
+              cacheMiss: 12
+              cacheHit: 0.24
+              output: 24
+            deepseek-v4-pro-0813:
+              currency: CNY
+              billingMode: deepseek-peak
+              cacheMiss: 9
+              cacheHit: 0.3
+              output: 27
+            glm-5.3:
+              currency: CNY
+              billingMode: flat
+              cacheMiss: 4
+              cacheHit: 1
+              output: 16
+            glm-5.2:
+              currency: CNY
+              billingMode: flat
+              cacheMiss: 4
+              cacheHit: 1
+              output: 16
+    planBilling:
+      providers:
+        aliyun-token-plan: plan
+- insert:
+    - id: browser-use
+      name: "@deepseek-ai/dsh-browser-use"
+    - id: browser-use-playwright
+      name: "@deepseek-ai/dsh-experimental-browser-use-playwright-mcp"
+      config:
+        mode: launch
+        headless: true
+        executablePath: /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+- id: llm-deepseek
+  name: "@deepseek-ai/dsh-llm-deepseek-api-key"
+  config:
+    models:
+      - id: deepseek-flash
+        name: DeepSeek V4.1 Flash
+        contextWindow: 1048576
+        systemPromptUpdate: in-history
+        toolUpdate: addition-only
+        inputModalities:
+          - text
+          - image
+      - id: deepseek-v4-pro
+        name: DeepSeek V4 Pro
+        description: Stronger agentic coding, knowledge, and difficult reasoning; suited
+          to complex or quality-critical tasks at higher cost.
+        contextWindow: 1048576
+        inputModalities:
+          - text
