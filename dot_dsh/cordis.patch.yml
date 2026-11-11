@@ -1,0 +1,13 @@
+- insert:
+    - id: rea-mcp
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        serverName: rea
+        transport: stdio
+        command: /Users/pengzhendong/.local/share/rea-dsh/runtime/node_modules/node/bin/node
+        args:
+          - /Users/pengzhendong/.local/share/rea-dsh/runtime/node_modules/rea-agents/scripts/rea.mjs
+          - mcp
+        env:
+          REA_IDA_MCP_CONFIG: /Users/pengzhendong/.config/rea/ida-mcp.json
+          REA_ANALYSIS_PROVIDER: ida

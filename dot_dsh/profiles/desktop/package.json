@@ -1,0 +1,30 @@
+{
+  "name": "dsh-profile-desktop",
+  "private": true,
+  "dependencies": {
+    "@deepseek-ai/dsh-browser-use": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-agent-team-profile": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-browser-use-playwright-mcp": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-forge-bundle": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-plugin-market-bundle": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-experimental-session-search": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-session-titles-bundle": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-terminal-bundle": "0.2.2-rc.1",
+    "dsh-cost-meter": "^1.9.62"
+  },
+  "dsh": {
+    "profile": {
+      "bundles": [
+        "@deepseek-ai/dsh-base",
+        "@deepseek-ai/dsh-web-app",
+        "@deepseek-ai/dsh-experimental-session-search",
+        "@deepseek-ai/dsh-experimental-plugin-market-bundle",
+        "dsh-cost-meter",
+        "@deepseek-ai/dsh-experimental-terminal-bundle",
+        "@deepseek-ai/dsh-experimental-forge-bundle",
+        "@deepseek-ai/dsh-experimental-session-titles-bundle",
+        "@deepseek-ai/dsh-experimental-agent-team-profile"
+      ]
+    }
+  }
+}
