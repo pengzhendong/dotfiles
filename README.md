@@ -43,8 +43,8 @@ Edit [Brewfile](Brewfile) when you want to change the shared package list.
 ## Managed configuration
 
 - **macOS** — scripts set Dock position and recents, trackpad three-finger drag,
-  the HHKB Bluetooth modifier mapping, and menu bar preferences. They also set up
-  Hammerspoon at login and configure Itsycal and Thaw.
+  the built-in keyboard's Caps Lock/Control swap, and menu bar preferences. They
+  also set up Hammerspoon at login and configure Itsycal and Thaw.
 - **iTerm2** — installs the `Dotfiles` profile with its fonts and light/dark
   colors, selects it for new sessions, and disables selecting and shading a
   command when clicked. iTerm2 reads these preferences on launch. Edit the
