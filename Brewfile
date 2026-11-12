@@ -8,6 +8,7 @@ brew "gawk"
 brew "gh"
 brew "neovim"
 brew "rsync"
+brew "rtk"
 brew "tmux"
 brew "tmux-mem-cpu-load"
 brew "unison"
@@ -20,6 +21,7 @@ cask "font-maple-mono-nf-cn"
 
 # AI and developer apps
 cask "codex"
+cask "deepseek-harness"
 cask "visual-studio-code"
 
 # Desktop apps
